@@ -3,7 +3,7 @@ package 그리디;
 import java.util.Arrays;
 import java.util.Collections;
 
-/*
+        /*
 	가장 좋은 것만 선택한다.
 	정렬 알고리즘과 자주 짝을 이루어 풀이한다. 
 	 */
