@@ -12,6 +12,8 @@ public class Ex3 {
      -> 수직으로 두 칸 이동한 뒤에 수평으로 한 칸 이동 
     3. 체스판을 넘어갈 수는 없다.
     4. 나이트의 위치가 주어졌을 때 이동할 수 있는 모든 경우의 수를 구하라 
+    
+    입력 : C2 // 결과 : 6
 
 	 */
 	public static void main(String[] args) {
