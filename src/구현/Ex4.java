@@ -31,7 +31,7 @@ public class Ex4 {
 
 	// 왼쪽으로 회전
 	public static void turn_left() {
-		direction -= -1;
+		direction --;
 		if (direction == -1) direction = 3;
 	}
 
@@ -94,7 +94,6 @@ public class Ex4 {
 				}
 				// 뒤가 바다로 막혀있는 경우
 				else break;
-				turn_time = 0;
 			}
 		}
 
