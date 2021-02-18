@@ -18,7 +18,6 @@ public class Ex3 {
 		hanoi(n, 1, 2, 3);
 		System.out.println("이동횟수 : " + cnt);
 		System.out.println("이동경로 : " + sb);
-
 	}
 	
 	static StringBuffer sb = new StringBuffer();
@@ -26,21 +25,16 @@ public class Ex3 {
 	static void hanoi (int n, int from, int by, int to) {
 		cnt++;
 		
-		// 딱 하나 남았으면 1 -> 3
+		// 1층짜리 탑이라면 바로 1 -> 3
 		if (n == 1)
 			sb.append(from + " " + to + " ");
 		else {
-			// 1,2층  빼고 1 -> 2
+			// 1층  빼고 1 -> 2
 			hanoi(n-1, from, to, by);  
-			// 2층 1 -> 3 
+			// 1층 1 -> 3 
 			sb.append(from + " " + to + " ");
 			// 나머지 2 -> 3 
 			hanoi(n-1, by, from, to);
 		}
-	}
-	
-	
-	
-	
-	
+	}	
 }
