@@ -15,6 +15,9 @@ public class Ex1 {
 	 2. 계획서에는 L,R,U,D중 하나의 문자가 반복적으로 적혀있다. 
 	 3. 정사각형 공간을 넘어가면 움직임은 무시된다.
 	 4. 계획서대로 움직인 여행가의 최종 위치를 구하라  
+	 
+	 입력 : 5 (N값)    // R R R U D D 
+	 출력 : (3, 4)
 	 */
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
