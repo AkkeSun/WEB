@@ -22,13 +22,13 @@ public class Ex2 {
 				System.out.println(-1);
 				break;
 			}
-			//5로 나누어 떨어지면 봉지 늘리고 끝내기 
+			// 5로 나누어 떨어지면 봉지 늘리고 끝내기 
 			if(sugar % 5 == 0) {
 				bong += sugar / 5;
 				System.out.println(bong);
 				break;
 			}
-			//아니라면 3을 빼고 봉지 하나 늘리기 
+			// 아니라면 3을 빼고 봉지 하나 늘리기 
 			else {
 				sugar -= 3;
 				bong++;				
