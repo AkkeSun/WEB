@@ -16,8 +16,8 @@ public class Ex1 {
 	 3. 정사각형 공간을 넘어가면 움직임은 무시된다.
 	 4. 계획서대로 움직인 여행가의 최종 위치를 구하라  
 	 
-	 입력 : 5 (N값)    // R R R U D D 
-	 출력 : (3, 4)
+	 입력 : 3 (N값)    // R R R U D D 
+	 출력 : (3, 3)
 	 */
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
