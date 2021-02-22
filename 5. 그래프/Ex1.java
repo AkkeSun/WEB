@@ -60,9 +60,9 @@ public class Ex1 {
         
         
         // 노드 1에 연결된 노드 정보 저장 
-        graph.get(1).add(2);
-        graph.get(1).add(3);
-        graph.get(1).add(8);
+        graph.get(1).add(2); // node 1의 0번지
+        graph.get(1).add(3); // node 1의 1번지
+        graph.get(1).add(8); // node 1의 2번지
         
         // 노드 2에 연결된 노드 정보 저장 
         graph.get(2).add(1);
