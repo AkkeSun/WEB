@@ -13,7 +13,7 @@ DFS : 너비 우선 탐색
 
 public class Ex1 {
 	
-	public static boolean [] visited = new boolean[9];
+	public static boolean [] visited = new boolean[9]; // 0~8 실제 사용은 0번지 안함
 	//tree 구조는 2중 list로 표현한다. 
 	public static ArrayList <ArrayList<Integer>> graph = new ArrayList<>();
 	
