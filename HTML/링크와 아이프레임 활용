@@ -1,0 +1,21 @@
+<H1>타히티의 사진</H1>
+다음 사진을 클릭하면 확대 사진을 볼 수 있습니다
+<br>
+  <a href= "./Image/tahiti01.jpg" target=photo>
+	<img src="./Image/tahiti01s.jpg">
+ </a>
+   <a href= "./Image/tahiti02.jpg" target=photo>
+	<img src="./Image/tahiti02s.jpg">
+ </a>
+   <a href= "./Image/tahiti03.jpg" target=photo>
+	<img src="./Image/tahiti03s.jpg">
+ </a>
+   <a href= "./Image/tahiti04.jpg" target=photo>
+	<img src="./Image/tahiti04s.jpg">
+ </a>
+   <a href= "./Image/tahiti05.jpg" target=photo>
+	<img src="./Image/tahiti05s.jpg">
+ </a>
+<br>
+<iframe src="./Image/tahiti01.jpg" name = photo width=400 height=266>이미지 없음</iframe>
+</div>
