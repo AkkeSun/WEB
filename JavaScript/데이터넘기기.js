@@ -25,29 +25,38 @@ enctype = text/plain            : 텍스트 형식으로 보내겠다
 
 <script>
 	function btn() {
+		//값 받기
 		let name = document.getElementById("name").value;
 		let age = document.getElementById("age").value;
-		location.href = "NewFile.jsp?name=" + name + "&age="+age;
+		
+		//넘기기
+		location.href = "NewFile.jsp?myArr=" + arr+"&age="+age";
+		
 	}
 </script>
 
 
-////////////////////////////////////////////////////
 
-<h3>여기는 NewFile.jsp 입니다</h3>
+<!-- Jquary (유효성 검사를 하면서 간단히 처리-->
+ 
+<form id = frm >
+	이름 : <input type = text name=name>
+	나이 : <input type = text name=age>
+	<button type=button>출력하기</button>
+</form>
 
-<%
-//scriptlet (자바 코드 영역)
-//내장객채 사용 : 객채 생성안해도 사용가능 
+<script>
 
-//무조건 String으로 입력받는다 
-String name = request.getParameter("name"); 
-int age = Integer.parseInt(request.getParameter("age")); 
-
-//두개 이상의 값을 받을 때는 배열로 받는다 (check box)
-String [] lang = request.getParameterValues("language");  
-
-//web에 표현(System넣으면 콘솔에 표현)
-out.println("이름 : " +name);
-out.println("나이 : " +age);
-%>
+ $(function() {
+	$('button').click(function () {
+		if($('input[name=name]').val ==""){
+			alert("이름을 기입해주세요")
+		}else{
+			$("#frm").attr("action", "NewFile.jsp");
+			$("#frm").attr("target", "_blank");      //새 창 열기		
+			$("#frm").submit(); 
+		}		
+	});
+});
+    
+</script>
