@@ -26,17 +26,17 @@
 	<script>
 		let xhttp = new XMLHttpRequest();
 
-		//xml 파일 호출 
+		//json 파일 호출 
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				nodeValFunc(this);
+				nodeValFunc(this.responseText);
 			}
 		}
-		xhttp.open("GET", "NewFile.xml", true);
+		xhttp.open("GET", "NewFile.json", true);
 		xhttp.send();
 
-		function nodeValFunc(xml) {
-			let title, author, price; // 태그값을 가진 객채 저장용
+		function nodeValFunc( respText ) {
+			let json = JSON.parse(respText); // String -> Json
 			let inTitle, inAuthor, inPrice; // 개별값을 따로 저장할 변수
 
 			//초기화
@@ -44,18 +44,35 @@
 			inAuthor = '';
 			inPrice = '';
 
-			let xmlDoc = xml.responseXML;
-			title = xmlDoc.getElementsByTagName("title"); //객채 저장
-			author = xmlDoc.getElementsByTagName("author");
-			price = xmlDoc.getElementsByTagName("price");
+
+
+		 ///////////////// 방법 1 ///////////////
+
 
 			//Node 갯수만큼 반복 
-			for (i = 0; i < title.length; i++) {
+			for (i = 0; i < json.length; i++) {
 
 				//변수에 값 저장
-				inTitle += title[i].childNodes[0].nodeValue+",";
-				inAuthor += author[i].childNodes[0].nodeValue+",";
-				inPrice += price[i].childNodes[0].nodeValue+",";
+				inTitle = json[i].title;
+				inAuthor = json[i].author;
+				inPrice = json[i].price;
+				
+				//테이블에 출력
+				$( "tr:eq(" + (i+1) + ") td:eq(0)" ).html(inTitle);	
+				$( "tr:eq(" + (i+1) + ") td:eq(1)" ).html(inAuthor);	
+				$( "tr:eq(" + (i+1) + ") td:eq(2)" ).html(inPrice);
+
+
+
+			///////////////// 방법 2 ///////////////
+
+			//Node 갯수만큼 반복 
+			for (i = 0; i < json.length; i++) {
+
+				//변수에 값 저장
+				inTitle += json[i].title+",";
+				inAuthor += json[i].author+",";
+				inPrice += json[i].price+",";
 
 		}
 			//배열로 저장
@@ -74,9 +91,7 @@
 			});
 		}
 			
-			
 	</script>
-
 
 </body>
 </html>
