@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p id="demo"></p>
+<br>
+<button type="button">클릭</button>
+
+<script type="text/javascript">
+$(function () {
+	
+	//servlet과 통신하려면 관련 jar파일을 WebContent-lib에 넣어야한다.
+	$("button").click(function() {
+		$.ajax({
+			url :"hello", 
+			type :"get",
+			datatype:"json",
+			success:function(data){
+
+			  //단순 문자열 받을 때	
+			  alert(data.str);
+			
+			  //Map을 json형태로 받아쓰기 (map=name)
+			  alert(data.map.title); 
+			  alert(data.map.content);
+			  
+			  //Map에 담긴 list를 받기 (list값은 여러개. 배열로 넘어온다) 
+			  alert(data.map.custlist[0].id);
+			  alert(data.map.custlist[0].name);
+			  
+			},
+			error:function(){
+				alert("fail");
+			}
+			
+		});
+	});	
+});
+</script>
+
+</body>
+</html>
