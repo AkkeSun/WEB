@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+name:<p id="name"></p>
+age:<p id="age"></p>
+birth:<p id="birth"></p>
+<br>
+<button type="button">클릭</button>
+
+<script type="text/javascript">
+$(function () {
+
+	$("button").click(function() {
+		
+		$.ajax({
+			url:"data.jsp",                         // 어디로 갈건지
+			type:"get",                             // method 형식
+			datatype:"json",                        // 가져올 데이터 타입
+			data: {v1:"홍길동", v2:"30", v3:"12/25"}, // 이거 가져가
+	 // data:"v1=홍길동 &v2=30 &v3=12/25",	
+			success:function(data, status, xhr){
+				let json = JSON.parse(data); // String->json
+				$("#name").text(json.name);  // json 형식으로 접근
+				$("#age").text(json.age);
+				$("#birth").text(json.birth);
+     // $("#demo").html(data); //접속한 jsp파일의 화면을 그냥 뽑기 
+
+			},
+			error:function(){
+				alert('error');
+			}
+		});		
+	});	
+});
+</script>
+
+</body>
+</html>
